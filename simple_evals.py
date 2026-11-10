@@ -1,5 +1,6 @@
 import argparse
 import json
+import os
 import subprocess
 from datetime import datetime
 
@@ -21,6 +22,7 @@ from .sampler.chat_completion_sampler import (
     ChatCompletionSampler,
 )
 from .sampler.claude_sampler import ClaudeCompletionSampler, CLAUDE_SYSTEM_MESSAGE_LMSYS
+from .sampler.claude_code_sampler import ClaudeCodeSampler
 from .sampler.o_chat_completion_sampler import OChatCompletionSampler
 from .sampler.responses_sampler import ResponsesSampler
 from .simpleqa_eval import SimpleQAEval
@@ -311,6 +313,12 @@ def main():
         ),
         "claude-3-haiku-20240307": ClaudeCompletionSampler(
             model="claude-3-haiku-20240307",
+        ),
+        # Harbor parity: Claude Code in a container, as Harbor's claude-code agent
+        # runs it (sampler/claude_code_sampler.py). CLAUDE_CODE_VERSION pins it.
+        "claude-code-sonnet-5-5": ClaudeCodeSampler(
+            model="claude-sonnet-5-5",
+            version=os.environ.get("CLAUDE_CODE_VERSION"),
         ),
     }
 
