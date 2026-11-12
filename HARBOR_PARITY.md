@@ -5,11 +5,11 @@ runs needs (harbor-framework/adapters, `src/healthbench-professional`):
 
 - `sampler/claude_code_sampler.py`: Claude Code in a container, run the way
   Harbor's `claude-code` agent runs it, with the adapter's instruction and
-  `/workspace/conversation.md`. Registered as `claude-code-sonnet-5-5`.
+  `/workspace/conversation.md`. Registered as `claude-code-haiku-5-5`.
 - `healthbench_professional_input.py`: converts the pinned, sha256-checked
   dataset file to the HealthBench input format, restricted to a list of ids.
 - `healthbench_professional_parity_ids.txt`: the 150-task parity subset, a copy
-  of the adapter's `parity_task_ids.txt`.
+  of what the adapter selects with `--split parity`.
 - `run_hbp_parity.sh`: one run with the HealthBench Professional settings
   (`gpt-5.4-2026-03-05` judge at low reasoning, length adjustment centre 2000,
   0.0147 per 500 characters).

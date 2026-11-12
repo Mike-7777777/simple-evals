@@ -4,7 +4,7 @@ Write HealthBench Professional in the HealthBench input format, for
 
 Reads the pinned, sha256-checked file the Harbor adapter uses
 (openai/healthbench-professional@349962f) and keeps only the record ids listed
-in --ids (one per line), e.g. the adapter's parity_task_ids.txt.
+in --ids (one per line), e.g. healthbench_professional_parity_ids.txt.
 
 Usage: python -m simple-evals.healthbench_professional_input --ids IDS --out OUT.jsonl
 """

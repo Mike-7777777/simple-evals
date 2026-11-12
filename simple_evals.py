@@ -316,8 +316,8 @@ def main():
         ),
         # Harbor parity: Claude Code in a container, as Harbor's claude-code agent
         # runs it (sampler/claude_code_sampler.py). CLAUDE_CODE_VERSION pins it.
-        "claude-code-sonnet-5-5": ClaudeCodeSampler(
-            model="claude-sonnet-5-5",
+        "claude-code-haiku-5-5": ClaudeCodeSampler(
+            model="claude-haiku-5-5",
             version=os.environ.get("CLAUDE_CODE_VERSION"),
         ),
     }

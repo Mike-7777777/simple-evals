@@ -15,7 +15,7 @@ mkdir -p "$out"
 export HBP_AGENT_LOG_DIR=$out/agent_logs
 python -m simple_evals_hbp.healthbench_professional_input --ids "$ids" --out "$out/input.jsonl"
 python -m simple_evals_hbp.simple_evals \
-  --eval healthbench --model claude-code-sonnet-5-5 \
+  --eval healthbench --model claude-code-haiku-5-5 \
   --healthbench-input-path "$out/input.jsonl" \
   --healthbench-professional-mode --healthbench-use-gpt-5-4-low-grader \
   --healthbench-length-adjustment-center 2000 \
