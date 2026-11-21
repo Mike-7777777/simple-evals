@@ -345,7 +345,9 @@ def main():
     )
     healthbench_grading_sampler = (
         ResponsesSampler(
-            model="gpt-5.4-2026-03-05",
+            # GRADER_MODEL names the same model on endpoints that do not serve the
+            # dated name, as the Harbor verifier's GRADER_MODEL does.
+            model=os.environ.get("GRADER_MODEL", "gpt-5.4-2026-03-05"),
             reasoning_model=True,
             reasoning_effort="low",
         )

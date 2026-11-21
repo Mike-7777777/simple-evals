@@ -5,7 +5,8 @@
 # IDS_FILE: simple_evals_hbp/healthbench_professional_parity_ids.txt for a full
 # run, or a shorter list (e.g. the 10-task sanity check).
 # Env: ANTHROPIC_API_KEY (and ANTHROPIC_BASE_URL), OPENAI_API_KEY (and
-# OPENAI_BASE_URL) for the gpt-5.4-2026-03-05 judge, CLAUDE_CODE_VERSION.
+# OPENAI_BASE_URL) for the gpt-5.4-2026-03-05 judge (GRADER_MODEL overrides the
+# name), CLAUDE_CODE_VERSION.
 set -euo pipefail
 ids=$1
 threads=${2:-4}
