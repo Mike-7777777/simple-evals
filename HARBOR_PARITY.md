@@ -20,7 +20,7 @@ Needs Docker and Python 3.12. Clone this branch as `simple_evals_hbp/`, then:
 
 ```bash
 python -m venv .venv && . .venv/bin/activate
-pip install openai pandas blobfile jinja2 tqdm numpy requests anthropic scipy tabulate "setuptools<81"
+pip install "openai==3.48.0" pandas blobfile jinja2 tqdm numpy requests anthropic scipy tabulate "setuptools<81"
 pip install --no-build-isolation "human-eval @ git+https://github.com/openai/human-eval"
 export ANTHROPIC_API_KEY=... OPENAI_API_KEY=... CLAUDE_CODE_VERSION=2.1.322
 simple_evals_hbp/run_hbp_parity.sh simple_evals_hbp/healthbench_professional_parity_ids.txt
